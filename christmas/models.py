@@ -28,7 +28,7 @@ class Recipe(models.Model):
         default=30)
     ingredients = models.TextField()
     instructions = models.TextField()
-    image = CloudinaryField('image', default='placeholder')
+    image = CloudinaryField('image', default='https://res.cloudinary.com/dn7apsma3/image/upload/v1234567890/placeholder.png')
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)

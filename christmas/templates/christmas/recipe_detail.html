@@ -12,7 +12,10 @@
   <div class="container-category-container">
     <div class="text-content">
       <h1>{{ recipe.title }}</h1>
-      <p>{{ recipe.description }}</p>
+      <div class="">
+
+<p>{{ recipe.description|safe }}</p>
+      </div>
       <div class="info">
         <div class="col">
           <i class="fas fa-users"></i>
@@ -48,7 +51,7 @@
       <h1 class="recipe-title">Ingredients</h1>
       <ul class="recipe-text">
         {% for ingredient in recipe.get_ingredients_list %}
-        <li class="list-group-item d-flex">{{ ingredient }}</li>
+        <li class="list-group-item d-flex">{{ ingredient|safe }}</li>
         {% endfor %}
       </ul>
     </div>
@@ -57,7 +60,7 @@
       <ol class="recipe-text">
         {% for step in recipe.get_instructions_list %}
         <li class="list-group-item d-flex">
-          <div class="ms-2">{{ step }}</div>
+          <div class="ms-2">{{ step|safe }}</div>
         </li>
         {% endfor %}
       </ol>
